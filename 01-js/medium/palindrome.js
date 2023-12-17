@@ -4,7 +4,17 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+  str = str.toLowerCase();
+  let palindrome = true;
+
+  var resultString = str.replace(/[^a-z]/g, '');
+  for (var i = 0; i < resultString.length; i++) {
+    if (resultString[i] != resultString[resultString.length - 1 - i]) {
+      palindrome = false;
+    }
+  }
+  return palindrome;
 }
 
 module.exports = isPalindrome;
